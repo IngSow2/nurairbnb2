@@ -2,6 +2,10 @@
 Se ha desarrollador el microsevicios de propiedades y tipos de propiedades, en donde una propieda puede estar compuesto:
 Id, estado, nombre y precio.
 Su proposito es de crear, modificar y eliminar las propiedades que puede tener, ademas de su tipo.
+
+# VIDEO DEMO:
+https://drive.google.com/file/d/1FdIosvINO389T4Quey455qqnj1rV3-0T/view?usp=sharing
+
 <br>
 ### Lista de propiedades:
 #### - "6c6fc866-8cf6-4f71-a198-91240554fdfa" INHABILITADO Hotel Copacabana 70
