@@ -41,14 +41,14 @@ public class CheckIn extends AggregateRoot {
       .filter(s -> s.getId().equals(propiedadCode))
       .findFirst()
       .orElse(null);
-    if (targetSeat == null) throw new BusinessRuleValidationException(
+    /*if (targetSeat == null) throw new BusinessRuleValidationException(
       "This propiedadCode is not valid" + propiedadCode
-    );
-    if (targetSeat.getEstado().equals(Estado.INHABILITADO)) {
+    );*/
+    /*if (targetSeat.getEstado().equals(Estado.INHABILITADO)) {
       throw new BusinessRuleValidationException(
         "This propiedadCode is already booked" + propiedadCode
       );
-    }
+    }*/
 
     /*if (this.propiedad != null) {
       this.oldSeat = this.seat;

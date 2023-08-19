@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/nurairbnb
+    url: jdbc:postgresql://localhost:5432/test
     username: postgres
-    password: danny
+    password: postgres
 
   jpa:
     generate-ddl: true

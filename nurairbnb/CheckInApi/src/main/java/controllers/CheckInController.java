@@ -23,7 +23,7 @@ public class CheckInController {
   }
 
   @PostMapping("/assign-propiedad")
-  public PropiedadDto assignSeat(@RequestBody CheckInDto checkInDto) {
+  public PropiedadDto assignPropiedad(@RequestBody CheckInDto checkInDto) {
     AssignPropiedadCommand assignSeatCommand = new AssignPropiedadCommand(checkInDto);
     return assignSeatCommand.execute(pipeline);
   }
