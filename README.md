@@ -173,4 +173,21 @@ Response:
 </code>
 <br>
 <br>
+## TEST UNITARIOS
+Los test realizados para los siguientes modulos  estan la siguientes imagenes :
+Junit:
+Capa de dominio
+<p align="center">
+
+https://github.com/WebDanny/microservice-propiedades/blob/main/nurairbnb/Capa_dominio.png</p>
+Capa de aplicacion
+<p align="center">
+https://github.com/WebDanny/microservice-propiedades/blob/main/nurairbnb/capa_aplicacion.png </p>
+controladores
+<p align="center">https://github.com/WebDanny/microservice-propiedades/blob/main/nurairbnb/checkInApicontrollers.png</p>
+
+### Postman
+https://github.com/WebDanny/microservice-propiedades/tree/main/TestPostman/postman%20propiedades
+<br>
+<br>
 

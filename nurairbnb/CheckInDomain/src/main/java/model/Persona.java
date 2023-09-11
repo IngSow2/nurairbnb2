@@ -18,7 +18,6 @@ public class Persona extends Entity {
 
     String name,
     String lastname,
-
     String ci
 
   ) throws BusinessRuleValidationException {

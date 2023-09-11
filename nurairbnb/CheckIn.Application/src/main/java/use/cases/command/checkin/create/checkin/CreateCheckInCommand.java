@@ -6,7 +6,7 @@ import java.util.UUID;
 
 public class CreateCheckInCommand implements Command<CheckInDto> {
 
-  CheckInDto checkInDto;
+  public CheckInDto checkInDto;
 
   public CreateCheckInCommand(CheckInDto checkInDto) {
     this.checkInDto = checkInDto;
