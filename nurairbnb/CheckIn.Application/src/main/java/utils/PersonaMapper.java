@@ -3,7 +3,7 @@ package utils;
 import dtos.PersonaDto;
 import model.Persona;
 
-public final class PersonaMapper {
+public class PersonaMapper {
 
   public static PersonaDto from(Persona passanger) {
     if (passanger == null) return new PersonaDto();

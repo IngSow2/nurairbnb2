@@ -5,8 +5,8 @@ import dtos.CheckInDto;
 
 public class GetCheckInQuery implements Command<CheckInDto> {
 
-  String flightId;
-  String passengerId;
+  public String flightId;
+  public String passengerId;
 
   public GetCheckInQuery(String flightId, String passengerId) {
     this.flightId = flightId;

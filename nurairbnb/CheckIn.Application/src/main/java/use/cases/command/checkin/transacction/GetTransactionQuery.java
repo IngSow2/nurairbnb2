@@ -6,7 +6,7 @@ import java.util.List;
 
 public class GetTransactionQuery implements Command<List<TransactionDto>> {
 
-  String flightId;
+  public String flightId;
 
   public GetTransactionQuery(String flightId) {
     this.flightId = flightId;

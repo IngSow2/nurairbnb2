@@ -5,7 +5,7 @@ import model.Propiedad;
 
 import java.util.UUID;
 
-public final class PropiedadMapper {
+public class PropiedadMapper {
 
     public static PropiedadDto from(Propiedad propiedad) {
         if (propiedad == null) return new PropiedadDto();
