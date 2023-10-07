@@ -14,7 +14,7 @@ repositories {
     mavenCentral()
 }
 
-mainClassName = 'com.javier.checkinapi.CheckInApiApplication'
+mainClassName = 'com.danny.checkinapi.CheckInApiApplication'
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
