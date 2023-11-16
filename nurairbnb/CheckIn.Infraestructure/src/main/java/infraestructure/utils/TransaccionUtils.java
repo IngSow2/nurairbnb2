@@ -5,6 +5,8 @@ import core.BusinessRuleValidationException;
 import infraestructure.model.TransactionJpaModel;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import model.Transaccion;
 
 @Generated
@@ -22,7 +24,7 @@ public class TransaccionUtils {
 
   public static List<TransactionJpaModel> seatsToJpaEntities(List<Transaccion> seats) {
     if (seats == null) return Collections.emptyList();
-    return seats.stream().map(TransaccionUtils::seatToJpaEntity).toList();
+    return seats.stream().map(TransaccionUtils::seatToJpaEntity).collect(Collectors.toList());
   }
 
   public static Transaccion jpaModelToSeat(TransactionJpaModel jpaModel)

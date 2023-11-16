@@ -15,6 +15,7 @@ import utils.TipoPropiedadMapper;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Component
 public class GetTipoPropiedadHandler
@@ -34,7 +35,7 @@ public class GetTipoPropiedadHandler
       List<TipoPropiedad> propiedades = propiedadRepository.findTipoPropiedadById(
               UUID.fromString(command.id)
       );
-      return propiedades.stream().map(TipoPropiedadMapper::from).toList();
+      return propiedades.stream().map(TipoPropiedadMapper::from).collect(Collectors.toList());
     } catch (BusinessRuleValidationException e) {
       e.printStackTrace();
       return null;

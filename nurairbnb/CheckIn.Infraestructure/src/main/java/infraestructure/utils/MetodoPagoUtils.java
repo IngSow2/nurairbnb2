@@ -6,6 +6,8 @@ import infraestructure.model.MetodoPagoJpaModel;
 import infraestructure.model.CheckInJpaModel;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import model.MetodoPago;
 
 @Generated
@@ -29,7 +31,7 @@ public class MetodoPagoUtils {
     return baggages
       .stream()
       .map((MetodoPago baggage) -> baggageToJpaEntity(baggage))
-      .toList();
+      .collect(Collectors.toList());
   }
 
   public static MetodoPago jpaToBaggage(MetodoPagoJpaModel jpaModel)

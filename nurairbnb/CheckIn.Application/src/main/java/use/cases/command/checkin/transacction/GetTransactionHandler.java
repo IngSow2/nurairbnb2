@@ -5,6 +5,8 @@ import core.BusinessRuleValidationException;
 import dtos.TransactionDto;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
+
 import model.Transaccion;
 import org.springframework.stereotype.Component;
 import repositories.TransactionRepository;
@@ -26,7 +28,7 @@ public class GetTransactionHandler
       List<Transaccion> seats = seatRepository.findByTransactionCode(
         UUID.fromString(command.flightId)
       );
-      return seats.stream().map(TransaccionMapper::from).toList();
+      return seats.stream().map(TransaccionMapper::from).collect(Collectors.toList());
     } catch (BusinessRuleValidationException e) {
       e.printStackTrace();
       return null;

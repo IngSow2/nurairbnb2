@@ -63,13 +63,13 @@ public class Propiedad extends AggregateRoot {
     }
 
     public void eliminarPropiedad(UUID Id) {
-        var event = new PropiedadEliminado(this, new Date());
+        PropiedadEliminado event = new PropiedadEliminado(this, new Date());
         this.estado = Estado.INHABILITADO;
         addDomainEvent(event);
     }
 
     public void modificarPropiedad(UUID Id, String nombre, PrecioValue precio) {
-        var event = new PropiedadModificada(this, new Date());
+        PropiedadModificada event = new PropiedadModificada(this, new Date());
         this.Id = Id;
         this.nombre = nombre;
         this.precio = precio;

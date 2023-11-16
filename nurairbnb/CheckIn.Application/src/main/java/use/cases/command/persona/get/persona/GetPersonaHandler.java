@@ -4,6 +4,8 @@ import an.awesome.pipelinr.Command;
 import core.BusinessRuleValidationException;
 import dtos.PersonaDto;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import model.Persona;
 import org.springframework.stereotype.Component;
 import repositories.PersonaRepository;
@@ -23,7 +25,7 @@ public class GetPersonaHandler
   public List<PersonaDto> handle(GetPersonaQuery command) {
     try {
       List<Persona> passangers = this.passangerRepository.getAll();
-      return passangers.stream().map(PersonaMapper::from).toList();
+      return passangers.stream().map(PersonaMapper::from).collect(Collectors.toList());
     } catch (BusinessRuleValidationException e) {
       e.printStackTrace();
       return null;

@@ -10,6 +10,7 @@ import utils.PropiedadMapper;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Component
 public class GetPropiedadHandler
@@ -27,7 +28,7 @@ public class GetPropiedadHandler
       List<Propiedad> propiedades = propiedadRepository.findPropiedadById(
               UUID.fromString(command.id)
       );
-      return propiedades.stream().map(PropiedadMapper::from).toList();
+      return propiedades.stream().map(PropiedadMapper::from).collect(Collectors.toList());
     } catch (BusinessRuleValidationException e) {
       e.printStackTrace();
       return null;

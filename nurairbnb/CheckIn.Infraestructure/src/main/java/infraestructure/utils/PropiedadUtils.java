@@ -7,6 +7,7 @@ import model.Propiedad;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Generated
 public class PropiedadUtils {
@@ -24,7 +25,7 @@ public class PropiedadUtils {
 
     public static List<PropiedadJpaModel> propiedadToJpaEntities(List<Propiedad> propiedades) {
         if (propiedades == null) return Collections.emptyList();
-        return propiedades.stream().map(PropiedadUtils::propiedadToJpaEntity).toList();
+        return propiedades.stream().map(PropiedadUtils::propiedadToJpaEntity).collect(Collectors.toList());
     }
 
     public static Propiedad jpaModelToPropiedad(PropiedadJpaModel jpaModel)

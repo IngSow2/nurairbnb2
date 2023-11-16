@@ -7,7 +7,7 @@ plugins {
 
 group 'com.danny'
 version '1.0'
-sourceCompatibility = '17'
+//sourceCompatibility = '17'
 archivesBaseName  = 'check-in-api'
 
 repositories {

@@ -9,6 +9,7 @@ import repositories.PropiedadRepository;
 import utils.PropiedadMapper;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class GetPropiedadesHandler
@@ -24,7 +25,7 @@ public class GetPropiedadesHandler
   public List<PropiedadDto> handle(GetPropiedadesQuery command) {
     try {
       List<Propiedad> propiedad = this.propiedadRepository.getAll();
-      return propiedad.stream().map(PropiedadMapper::from).toList();
+      return propiedad.stream().map(PropiedadMapper::from).collect(Collectors.toList());
     } catch (BusinessRuleValidationException e) {
       e.printStackTrace();
       return null;
