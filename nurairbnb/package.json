@@ -1,0 +1,21 @@
+{
+	"scripts": {
+		"precommit": "lint-staged"
+	},
+	"lint-staged": {
+		"**/*.java": [
+			"./gradlew spotlessApply",
+			"git add"
+		]
+	},
+	"devDependencies": {
+		"husky": "^8.0.3",
+		"lint-staged": "^15.2.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run precommit"
+		}
+	}
+}
+

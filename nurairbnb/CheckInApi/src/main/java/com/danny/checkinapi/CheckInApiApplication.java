@@ -36,14 +36,8 @@ import use.cases.command.propiedades.get.GetPropiedadQuery;
 
 import java.util.Arrays;
 
-@SpringBootApplication(scanBasePackages={
-        "com.danny.checkinapi.service", "com.danny.checkinapi.controllers"})
-@ComponentScan(
-        basePackages = {
-                "com.danny.checkinapi.controllers",
-                "com.danny.checkinapi.service", "infraestructure.repositories", "use.cases", "com/nur/event", "core",
-        }
-)
+@SpringBootApplication(scanBasePackages = {"com.danny.checkinapi.service", "com.danny.checkinapi.controllers"})
+@ComponentScan(basePackages = {"com.danny.checkinapi.controllers", "com.danny.checkinapi.service", "infraestructure.repositories", "use.cases", "com/nur/event", "core",})
 @EntityScan("infraestructure.model")
 @EnableJpaRepositories(basePackages = {"infraestructure.repositories"})
 @EnableTransactionManagement
@@ -52,85 +46,63 @@ import java.util.Arrays;
 @EnableKafka
 public class CheckInApiApplication {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CheckInApiApplication.class);
-
-    public static void main(String[] args) {
-        SpringApplication.run(CheckInApiApplication.class, args);
-    }
-
-
-
-    @Autowired
-    OrderManageServiceImpl orderManageService;
-    @KafkaListener(id = "reserve", topics = "reserve", groupId = "propiedades")
-    public void onEvent(Reserve o) {
-        LOG.info("Received: {}" , o);
-        System.out.println("ESTADO: ---  " + o.getStatus());
-      //  GetPropiedadQuery  query = new GetPropiedadQuery(o.getPropiedad().getId().toString());
-        if (o.getStatus().name().equals("RESERVE"))
-            orderManageService.reserve(o);
-        else
-            System.out.println("no esta reservado ");
-            orderManageService.confirm(o);
-    }
+	private static final Logger LOG = LoggerFactory.getLogger(CheckInApiApplication.class);public static void main(String[] args) {SpringApplication.run(CheckInApiApplication.class, args);}@Autowired OrderManageServiceImpl orderManageService;@KafkaListener(id = "reserve", topics = "reserve", groupId = "propiedades") public void onEvent(Reserve o) {LOG.info("Received: {}", o);System.out.println("ESTADO: ---  " + o.getStatus());
+		//  GetPropiedadQuery  query = new GetPropiedadQuery(o.getPropiedad().getId().toString());
+		if (o.getStatus().name().equals("RESERVE")) orderManageService.reserve(o);
+		else System.out.println("no esta reservado ");
+		orderManageService.confirm(o);
+	}
 
 
-    @Bean(name = "checkInRepository")
-    public CheckInRepository checkInRepository() {
-        return new CheckInJpaRepository();
-    }
+	@Bean(name = "checkInRepository")
+	public CheckInRepository checkInRepository() {
+		return new CheckInJpaRepository();
+	}
 
-    @Bean(name = "passangerRepository")
-    public PersonaRepository passangerRepository() {
-        return new PersonaJpaRepository();
-    }
+	@Bean(name = "passangerRepository")
+	public PersonaRepository passangerRepository() {
+		return new PersonaJpaRepository();
+	}
 
-    @Bean(name = "seatRepository")
-    public TransactionRepository seatRepository() {
-        return new TransactionJpaRepository();
-    }
+	@Bean(name = "seatRepository")
+	public TransactionRepository seatRepository() {
+		return new TransactionJpaRepository();
+	}
 
-    @Bean(name = "metodoPagoRepository")
-    public MetodoPagoRepository metodoPagoRepository() {
-        return new MetodoPagoJpaRepository();
-    }
-
-
-    @Bean(name = "propiedadRepository")
-    public PropiedadRepository propiedadRepository() {
-        return new PropiedadJpaRepository();
-    }
-
-    @Bean(name = "tipoPropiedadRepository")
-    public TipoPropiedadRepository tipoPropiedadRepository() {
-        return new TipoPropiedadJpaRepository();
-    }
+	@Bean(name = "metodoPagoRepository")
+	public MetodoPagoRepository metodoPagoRepository() {
+		return new MetodoPagoJpaRepository();
+	}
 
 
-    @Bean
-    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-        return args -> {
-            System.out.println("Let's inspect the beans provided by Spring Boot:");
+	@Bean(name = "propiedadRepository")
+	public PropiedadRepository propiedadRepository() {
+		return new PropiedadJpaRepository();
+	}
 
-            String[] beanNames = ctx.getBeanDefinitionNames();
-            Arrays.sort(beanNames);
-            for (String beanName : beanNames) {
-                System.out.println(beanName);
-            }
-        };
-    }
+	@Bean(name = "tipoPropiedadRepository")
+	public TipoPropiedadRepository tipoPropiedadRepository() {
+		return new TipoPropiedadJpaRepository();
+	}
 
-    @Bean
-    Pipeline pipeline(
-            ObjectProvider<Command.Handler> commandHandlers,
-            ObjectProvider<Notification.Handler> notificationHandlers,
-            ObjectProvider<Command.Middleware> middlewares
-    ) {
-        return new Pipelinr()
-                .with(commandHandlers::stream)
-                .with(notificationHandlers::stream)
-                .with(middlewares::orderedStream);
-    }
+
+	@Bean
+	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+		return args -> {
+			System.out.println("Let's inspect the beans provided by Spring Boot:");
+
+			String[] beanNames = ctx.getBeanDefinitionNames();
+			Arrays.sort(beanNames);
+			for (String beanName : beanNames) {
+				System.out.println(beanName);
+			}
+		};
+	}
+
+	@Bean
+	Pipeline pipeline(ObjectProvider<Command.Handler> commandHandlers, ObjectProvider<Notification.Handler> notificationHandlers, ObjectProvider<Command.Middleware> middlewares) {
+		return new Pipelinr().with(commandHandlers::stream).with(notificationHandlers::stream).with(middlewares::orderedStream);
+	}
 
 
 }
