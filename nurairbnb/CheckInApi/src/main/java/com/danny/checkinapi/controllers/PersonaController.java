@@ -17,15 +17,11 @@ public class PersonaController {
 
   Logger logger = LoggerFactory.getLogger(PersonaController.class);
   final Pipeline pipeline;
-
   public PersonaController(Pipeline pipeline) {
     this.pipeline = pipeline;
   }
-
   @GetMapping("/persona")
-  public List<PersonaDto> getPassengers() {
-    GetPersonaQuery query = new GetPersonaQuery();
+  public List<PersonaDto> getPassengers() {GetPersonaQuery query = new GetPersonaQuery();
     return query.execute(pipeline);
   }
-
 }
