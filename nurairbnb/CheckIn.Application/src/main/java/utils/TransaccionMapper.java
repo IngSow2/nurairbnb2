@@ -1,7 +1,7 @@
 package utils;
 
 import dtos.TransactionDto;
-import model.Transaccion;
+import com.nur.model.Transaccion;
 
 public final class TransaccionMapper {
 

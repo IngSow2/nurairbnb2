@@ -1,5 +1,6 @@
 package infraestructure.repositories.check.in;
 
+import com.nur.model.CheckIn;
 import core.BusinessRuleValidationException;
 import infraestructure.model.CheckInJpaModel;
 import infraestructure.model.PersonaJpaModel;
@@ -11,11 +12,12 @@ import infraestructure.utils.PersonaUtils;
 import infraestructure.utils.PropiedadUtils;
 
 import java.util.*;
-import javax.transaction.Transactional;
-import model.*;
+
+import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import repositories.CheckInRepository;
+import com.nur.repositories.CheckInRepository;
 
 @Repository
 public class CheckInJpaRepository implements CheckInRepository {

@@ -1,14 +1,11 @@
 package use.cases.command.propiedades.get;
 
-import an.awesome.pipelinr.Command;
 import core.BusinessRuleValidationException;
 import dtos.PropiedadDto;
-import model.Propiedad;
+import com.nur.model.Propiedad;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.stereotype.Component;
-import repositories.PropiedadRepository;
-import utils.PropiedadMapper;
+import com.nur.repositories.PropiedadRepository;
 
 import java.util.Arrays;
 import java.util.List;

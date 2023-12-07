@@ -2,16 +2,15 @@ package use.cases.command.persona;
 
 import core.BusinessRuleValidationException;
 import dtos.PersonaDto;
-import model.Persona;
+import com.nur.model.Persona;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import repositories.PersonaRepository;
+import com.nur.repositories.PersonaRepository;
 import use.cases.command.persona.get.persona.GetPersonaHandler;
 import use.cases.command.persona.get.persona.GetPersonaQuery;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

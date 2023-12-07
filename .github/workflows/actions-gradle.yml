@@ -31,4 +31,3 @@ jobs:
     - name: Build with Gradle
       working-directory: ./nurairbnb
       run: ./gradlew build
-      

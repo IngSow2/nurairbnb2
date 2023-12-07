@@ -5,7 +5,9 @@ import dtos.PropiedadDto;
 
 import java.util.ArrayList;
 import java.util.List;
-import model.CheckIn;
+import java.util.stream.Collectors;
+
+import com.nur.model.CheckIn;
 
 public class CheckInMapper {
 
@@ -13,7 +15,7 @@ public class CheckInMapper {
     if (checkIn == null) return new CheckInDto();
     List<PropiedadDto> availableSeats = checkIn.getAvaiblePropiedades() == null
       ? new ArrayList<>()
-      : checkIn.getAvaiblePropiedades().stream().map(PropiedadMapper::from).toList();
+      : checkIn.getAvaiblePropiedades().stream().map(PropiedadMapper::from).collect(Collectors.toList());
     return new CheckInDto(
       checkIn.getId().toString(),
       checkIn.getPropiedadId().toString(),

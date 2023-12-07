@@ -1,6 +1,6 @@
 package dtos;
 
-import annotations.Generated;
+import com.nur.annotations.Generated;
 
 @Generated
 public class Booking {

@@ -1,5 +1,6 @@
 package model;
 
+import com.nur.model.TransaccionPago;
 import core.BusinessRuleValidationException;
 import org.junit.jupiter.api.Test;
 

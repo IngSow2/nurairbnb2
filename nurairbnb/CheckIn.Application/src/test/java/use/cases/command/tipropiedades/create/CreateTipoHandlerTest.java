@@ -1,10 +1,10 @@
 package use.cases.command.tipropiedades.create;
 
 import dtos.TipoPropiedadDto;
-import model.TipoPropiedad;
+import com.nur.model.TipoPropiedad;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import repositories.TipoPropiedadRepository;
+import com.nur.repositories.TipoPropiedadRepository;
 
 import java.util.UUID;
 

@@ -1,12 +1,14 @@
 package infraestructure.utils;
 
-import annotations.Generated;
+import com.nur.annotations.Generated;
 import core.BusinessRuleValidationException;
 import infraestructure.model.MetodoPagoJpaModel;
-import infraestructure.model.CheckInJpaModel;
+
 import java.util.Collections;
 import java.util.List;
-import model.MetodoPago;
+import java.util.stream.Collectors;
+
+import com.nur.model.MetodoPago;
 
 @Generated
 public class MetodoPagoUtils {
@@ -29,7 +31,7 @@ public class MetodoPagoUtils {
     return baggages
       .stream()
       .map((MetodoPago baggage) -> baggageToJpaEntity(baggage))
-      .toList();
+      .collect(Collectors.toList());
   }
 
   public static MetodoPago jpaToBaggage(MetodoPagoJpaModel jpaModel)

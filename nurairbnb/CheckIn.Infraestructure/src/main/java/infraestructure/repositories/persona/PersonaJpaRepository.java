@@ -6,11 +6,11 @@ import infraestructure.utils.PersonaUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import model.Persona;
+import com.nur.model.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Repository;
-import repositories.PersonaRepository;
+import com.nur.repositories.PersonaRepository;
 
 @Repository
 public class PersonaJpaRepository implements PersonaRepository {

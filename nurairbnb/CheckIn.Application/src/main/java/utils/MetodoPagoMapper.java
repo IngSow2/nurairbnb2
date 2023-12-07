@@ -2,7 +2,7 @@ package utils;
 
 import core.BusinessRuleValidationException;
 import dtos.MetodoPagoDto;
-import model.MetodoPago;
+import com.nur.model.MetodoPago;
 
 public final class MetodoPagoMapper {
 

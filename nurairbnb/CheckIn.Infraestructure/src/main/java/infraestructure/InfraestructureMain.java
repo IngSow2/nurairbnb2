@@ -1,6 +1,6 @@
 package infraestructure;
 
-import annotations.Generated;
+import com.nur.annotations.Generated;
 import java.util.Arrays;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
-import model.Transaccion;
+import com.nur.model.Transaccion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import repositories.TransactionRepository;
+import com.nur.repositories.TransactionRepository;
 
 @Repository
 public class TransactionJpaRepository implements TransactionRepository {

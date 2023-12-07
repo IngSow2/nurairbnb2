@@ -4,9 +4,9 @@ import an.awesome.pipelinr.Command;
 import core.BusinessRuleValidationException;
 import dtos.CheckInDto;
 import java.util.UUID;
-import model.CheckIn;
+import com.nur.model.CheckIn;
 import org.springframework.stereotype.Component;
-import repositories.CheckInRepository;
+import com.nur.repositories.CheckInRepository;
 import utils.CheckInMapper;
 
 @Component

@@ -1,6 +1,8 @@
 package infraestructure.utils;
 
-import annotations.Generated;
+import com.nur.annotations.Generated;
+import com.nur.model.CheckIn;
+import com.nur.model.Propiedad;
 import core.BusinessRuleValidationException;
 import infraestructure.model.CheckInJpaModel;
 import infraestructure.model.PropiedadJpaModel;
@@ -8,7 +10,7 @@ import infraestructure.model.PropiedadJpaModel;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.*;
+
 
 @Generated
 public class CheckInUtils {

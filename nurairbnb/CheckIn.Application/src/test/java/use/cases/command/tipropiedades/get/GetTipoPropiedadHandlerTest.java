@@ -1,14 +1,11 @@
 package use.cases.command.tipropiedades.get;
 
-import an.awesome.pipelinr.Command;
 import core.BusinessRuleValidationException;
 import dtos.TipoPropiedadDto;
-import model.TipoPropiedad;
+import com.nur.model.TipoPropiedad;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.stereotype.Component;
-import repositories.TipoPropiedadRepository;
-import utils.TipoPropiedadMapper;
+import com.nur.repositories.TipoPropiedadRepository;
 
 import java.util.Arrays;
 import java.util.List;

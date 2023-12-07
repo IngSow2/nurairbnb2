@@ -3,10 +3,10 @@ package use.cases.command.tipropiedades.create;
 import an.awesome.pipelinr.Command;
 import core.BusinessRuleValidationException;
 import dtos.TipoPropiedadDto;
-import factories.tipo.TipoPropiedadFactory;
-import model.TipoPropiedad;
+import com.nur.factories.tipo.TipoPropiedadFactory;
+import com.nur.model.TipoPropiedad;
 import org.springframework.stereotype.Component;
-import repositories.TipoPropiedadRepository;
+import com.nur.repositories.TipoPropiedadRepository;
 import utils.TipoPropiedadMapper;
 
 import java.util.UUID;

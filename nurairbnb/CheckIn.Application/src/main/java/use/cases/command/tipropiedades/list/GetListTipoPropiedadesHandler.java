@@ -3,12 +3,13 @@ package use.cases.command.tipropiedades.list;
 import an.awesome.pipelinr.Command;
 import core.BusinessRuleValidationException;
 import dtos.TipoPropiedadDto;
-import model.TipoPropiedad;
+import com.nur.model.TipoPropiedad;
 import org.springframework.stereotype.Component;
-import repositories.TipoPropiedadRepository;
+import com.nur.repositories.TipoPropiedadRepository;
 import utils.TipoPropiedadMapper;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class GetListTipoPropiedadesHandler
@@ -24,7 +25,7 @@ public class GetListTipoPropiedadesHandler
   public List<TipoPropiedadDto> handle(GetListTipoPropiedadesQuery command) {
     try {
       List<TipoPropiedad> tipo = this.tipo.getAll();
-      return tipo.stream().map(TipoPropiedadMapper::from).toList();
+      return tipo.stream().map(TipoPropiedadMapper::from).collect(Collectors.toList());
     } catch (BusinessRuleValidationException e) {
       e.printStackTrace();
       return null;

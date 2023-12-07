@@ -2,7 +2,7 @@ package utils;
 
 import core.BusinessRuleValidationException;
 import dtos.PropiedadDto;
-import model.Propiedad;
+import com.nur.model.Propiedad;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

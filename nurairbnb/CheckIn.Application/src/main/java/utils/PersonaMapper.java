@@ -1,7 +1,7 @@
 package utils;
 
 import dtos.PersonaDto;
-import model.Persona;
+import com.nur.model.Persona;
 
 public class PersonaMapper {
 

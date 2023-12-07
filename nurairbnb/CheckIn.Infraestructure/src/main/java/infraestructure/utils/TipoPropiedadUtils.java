@@ -2,10 +2,11 @@ package infraestructure.utils;
 
 import core.BusinessRuleValidationException;
 import infraestructure.model.TipoPropiedadJpaModel;
-import model.TipoPropiedad;
+import com.nur.model.TipoPropiedad;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TipoPropiedadUtils {
 
@@ -20,7 +21,7 @@ public class TipoPropiedadUtils {
 
     public static List<TipoPropiedadJpaModel> seatsToJpaEntities(List<TipoPropiedad> tipo) {
         if (tipo == null) return Collections.emptyList();
-        return tipo.stream().map(TipoPropiedadUtils::tipoToJpaEntity).toList();
+        return tipo.stream().map(TipoPropiedadUtils::tipoToJpaEntity).collect(Collectors.toList());
     }
 
     public static TipoPropiedad jpaModelToTipoPropiedad(TipoPropiedadJpaModel jpaModel)

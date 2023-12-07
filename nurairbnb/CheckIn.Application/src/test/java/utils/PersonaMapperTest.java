@@ -1,12 +1,8 @@
 package utils;
 
 import core.BusinessRuleValidationException;
-import dtos.MetodoPagoDto;
 import dtos.PersonaDto;
-import dtos.PropiedadDto;
-import model.MetodoPago;
-import model.Persona;
-import model.Propiedad;
+import com.nur.model.Persona;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

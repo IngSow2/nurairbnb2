@@ -1,10 +1,10 @@
 package factories;
 
 import core.BusinessRuleValidationException;
-import factories.check.in.CreateCheckIn;
-import model.CheckIn;
-import model.Persona;
-import model.Propiedad;
+import com.nur.factories.check.in.CreateCheckIn;
+import com.nur.model.CheckIn;
+import com.nur.model.Persona;
+import com.nur.model.Propiedad;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

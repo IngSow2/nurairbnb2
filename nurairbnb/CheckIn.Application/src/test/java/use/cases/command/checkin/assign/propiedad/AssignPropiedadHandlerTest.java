@@ -3,13 +3,13 @@ package use.cases.command.checkin.assign.propiedad;
 import dtos.CheckInDto;
 import dtos.PersonaDto;
 import dtos.PropiedadDto;
-import model.CheckIn;
-import model.Persona;
-import model.Propiedad;
+import com.nur.model.CheckIn;
+import com.nur.model.Persona;
+import com.nur.model.Propiedad;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import repositories.CheckInRepository;
-import repositories.PropiedadRepository;
+import com.nur.repositories.CheckInRepository;
+import com.nur.repositories.PropiedadRepository;
 
 import java.util.ArrayList;
 import java.util.Date;

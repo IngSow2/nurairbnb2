@@ -1,16 +1,12 @@
 package model;
 
-import core.BusinessRuleValidationException;
-import core.Entity;
+import com.nur.model.Transaccion;
 
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import value.objects.CIValue;
-import value.objects.PersonNameValue;
 
-import java.util.Date;
 import java.util.UUID;
 
 public class TransaccionPagoTest {

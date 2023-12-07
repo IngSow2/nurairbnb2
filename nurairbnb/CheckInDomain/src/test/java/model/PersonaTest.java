@@ -1,10 +1,8 @@
 package model;
 
+import com.nur.model.Persona;
 import core.BusinessRuleValidationException;
-import core.Entity;
 import org.junit.jupiter.api.Test;
-import value.objects.CIValue;
-import value.objects.PersonNameValue;
 
 import java.util.Date;
 import java.util.UUID;

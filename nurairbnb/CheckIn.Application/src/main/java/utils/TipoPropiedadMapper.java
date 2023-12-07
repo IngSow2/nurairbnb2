@@ -1,9 +1,7 @@
 package utils;
 
-import dtos.PropiedadDto;
 import dtos.TipoPropiedadDto;
-import model.Propiedad;
-import model.TipoPropiedad;
+import com.nur.model.TipoPropiedad;
 
 import java.util.UUID;
 

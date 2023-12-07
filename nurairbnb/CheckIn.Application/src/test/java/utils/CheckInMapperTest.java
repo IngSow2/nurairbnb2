@@ -2,10 +2,9 @@ package utils;
 
 import core.BusinessRuleValidationException;
 import dtos.CheckInDto;
-import dtos.PropiedadDto;
-import model.CheckIn;
-import model.Persona;
-import model.Propiedad;
+import com.nur.model.CheckIn;
+import com.nur.model.Persona;
+import com.nur.model.Propiedad;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
