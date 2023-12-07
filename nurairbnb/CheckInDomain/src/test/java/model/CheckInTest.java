@@ -30,7 +30,7 @@ import static org.junit.jupiter.api.Assertions.*;
     @Test
      void testAssignPropiedad() throws BusinessRuleValidationException {
         UUID propiedadCode = UUID.randomUUID();
-        Propiedad propiedad = new Propiedad(propiedadCode, "Test Propiedad", "HABILITADO", 1000.0);
+        Propiedad propiedad = new Propiedad(String.valueOf(propiedadCode), "Test Propiedad", "HABILITADO", 1000.0);
         availablePropiedades.add(propiedad);
 
         checkIn.assignPropiedad(propiedadCode);
@@ -46,7 +46,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
         assertEquals(0, checkIn.getDomainEvents().size());
         UUID propiedadCode = UUID.randomUUID();
-        Propiedad propiedad = new Propiedad(propiedadCode, "Test Propiedad", "HABILITADO", 1000.0);
+        Propiedad propiedad = new Propiedad(String.valueOf(propiedadCode), "Test Propiedad", "HABILITADO", 1000.0);
         availablePropiedades.add(propiedad);
         checkIn.assignPropiedad(propiedadCode);
         checkIn.completeCheckIn();
