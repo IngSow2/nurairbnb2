@@ -28,5 +28,4 @@ public class PersonaController {
     return query.execute(pipeline);
   }
 
-
 }
