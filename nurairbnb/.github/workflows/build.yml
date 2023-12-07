@@ -18,12 +18,16 @@ jobs:
         with:
           java-version: 17
           distribution: 'zulu' # Alternative distribution options are available
+      - name: Make gradlew executable
+        working-directory: ./nurairbnb
+        run: chmod +x ./gradlew
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
+
       - name: Cache Gradle packages
         uses: actions/cache@v3
         with:
@@ -34,4 +38,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: aa8ccdae2b0518116e302fbc926d23c921e76c40
+        working-directory: ./nurairbnb
         run: ./gradlew build sonar --info
