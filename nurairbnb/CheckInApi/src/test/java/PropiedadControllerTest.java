@@ -1,7 +1,7 @@
 import an.awesome.pipelinr.Command;
 import an.awesome.pipelinr.Pipeline;
-import controllers.PropiedadController;
-import controllers.TipoPropiedadController;
+
+import com.danny.checkinapi.controllers.PropiedadController;
 import dtos.PropiedadDto;
 import dtos.TipoPropiedadDto;
 import org.junit.jupiter.api.BeforeEach;

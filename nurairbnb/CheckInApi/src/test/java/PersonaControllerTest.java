@@ -1,9 +1,7 @@
 import an.awesome.pipelinr.Command;
 import an.awesome.pipelinr.Pipeline;
-import controllers.PersonaController;
-import controllers.PropiedadController;
+import com.danny.checkinapi.controllers.PersonaController;
 import dtos.PersonaDto;
-import dtos.PropiedadDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -11,7 +9,6 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Matchers.anyObject;
