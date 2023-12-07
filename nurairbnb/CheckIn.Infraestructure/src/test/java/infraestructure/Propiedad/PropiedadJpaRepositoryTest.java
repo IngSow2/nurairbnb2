@@ -4,7 +4,7 @@ import core.BusinessRuleValidationException;
 import infraestructure.model.PropiedadJpaModel;
 import infraestructure.repositories.propiedad.PropiedadCrudRepository;
 import infraestructure.repositories.propiedad.PropiedadJpaRepository;
-import model.Propiedad;
+import com.nur.model.Propiedad;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

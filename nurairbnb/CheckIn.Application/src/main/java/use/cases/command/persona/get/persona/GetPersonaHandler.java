@@ -6,9 +6,9 @@ import dtos.PersonaDto;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import model.Persona;
+import com.nur.model.Persona;
 import org.springframework.stereotype.Component;
-import repositories.PersonaRepository;
+import com.nur.repositories.PersonaRepository;
 import utils.PersonaMapper;
 
 @Component

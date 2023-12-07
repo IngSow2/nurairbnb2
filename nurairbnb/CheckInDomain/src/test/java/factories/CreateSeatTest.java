@@ -1,10 +1,8 @@
 package factories;
 
 import core.BusinessRuleValidationException;
-import factories.persona.CreatePersona;
-import factories.transaccion.CreateSeat;
-import model.Persona;
-import model.Transaccion;
+import com.nur.factories.transaccion.CreateSeat;
+import com.nur.model.Transaccion;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

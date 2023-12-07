@@ -5,10 +5,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dtos.PropiedadDto;
 
 import java.util.UUID;
-import model.CheckIn;
+import com.nur.model.CheckIn;
 import org.springframework.stereotype.Component;
-import repositories.CheckInRepository;
-import repositories.PropiedadRepository;
+import com.nur.repositories.CheckInRepository;
+import com.nur.repositories.PropiedadRepository;
 import utils.PropiedadMapper;
 
 @Component

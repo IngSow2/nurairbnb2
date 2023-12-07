@@ -1,5 +1,8 @@
 package model;
 
+import com.nur.model.CheckIn;
+import com.nur.model.Persona;
+import com.nur.model.Propiedad;
 import core.BusinessRuleValidationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

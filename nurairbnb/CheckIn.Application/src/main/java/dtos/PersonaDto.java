@@ -1,6 +1,6 @@
 package dtos;
 
-import annotations.Generated;
+import com.nur.annotations.Generated;
 import java.util.Date;
 
 @Generated

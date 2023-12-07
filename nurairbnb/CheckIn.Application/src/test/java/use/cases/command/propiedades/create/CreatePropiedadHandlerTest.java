@@ -1,10 +1,10 @@
 package use.cases.command.propiedades.create;
 
 import dtos.PropiedadDto;
-import model.Propiedad;
+import com.nur.model.Propiedad;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import repositories.PropiedadRepository;
+import com.nur.repositories.PropiedadRepository;
 
 import java.util.UUID;
 

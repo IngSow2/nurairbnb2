@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import model.Transaccion;
+import com.nur.model.Transaccion;
 import org.springframework.stereotype.Component;
-import repositories.TransactionRepository;
+import com.nur.repositories.TransactionRepository;
 import utils.TransaccionMapper;
 
 @Component

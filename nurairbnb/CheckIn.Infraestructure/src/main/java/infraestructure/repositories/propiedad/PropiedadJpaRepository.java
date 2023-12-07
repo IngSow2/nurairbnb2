@@ -3,12 +3,12 @@ package infraestructure.repositories.propiedad;
 import core.BusinessRuleValidationException;
 import infraestructure.model.PropiedadJpaModel;
 import infraestructure.utils.PropiedadUtils;
-import model.Propiedad;
+import com.nur.model.Propiedad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Repository;
-import repositories.PropiedadRepository;
+import com.nur.repositories.PropiedadRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;

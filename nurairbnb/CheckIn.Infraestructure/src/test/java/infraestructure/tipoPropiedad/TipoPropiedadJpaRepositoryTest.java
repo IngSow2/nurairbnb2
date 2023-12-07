@@ -1,11 +1,10 @@
 package infraestructure.tipoPropiedad;
 
 import core.BusinessRuleValidationException;
-import dtos.TipoPropiedadDto;
 import infraestructure.model.TipoPropiedadJpaModel;
 import infraestructure.repositories.tipoPropiedad.TipoPropiedadCrudRepository;
 import infraestructure.repositories.tipoPropiedad.TipoPropiedadJpaRepository;
-import model.TipoPropiedad;
+import com.nur.model.TipoPropiedad;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

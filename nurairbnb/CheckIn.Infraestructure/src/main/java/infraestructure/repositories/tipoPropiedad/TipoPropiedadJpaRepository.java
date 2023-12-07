@@ -3,12 +3,12 @@ package infraestructure.repositories.tipoPropiedad;
 import core.BusinessRuleValidationException;
 import infraestructure.model.TipoPropiedadJpaModel;
 import infraestructure.utils.TipoPropiedadUtils;
-import model.TipoPropiedad;
+import com.nur.model.TipoPropiedad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Repository;
-import repositories.TipoPropiedadRepository;
+import com.nur.repositories.TipoPropiedadRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;

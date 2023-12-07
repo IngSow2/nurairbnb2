@@ -1,18 +1,11 @@
 package factories;
 
 import core.BusinessRuleValidationException;
-import factories.check.in.CreateCheckIn;
-import factories.persona.CreatePersona;
-import model.CheckIn;
-import model.Persona;
-import model.Propiedad;
+import com.nur.factories.persona.CreatePersona;
+import com.nur.model.Persona;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 class CreatePersonaTest {
    private CreatePersona personaFactory;

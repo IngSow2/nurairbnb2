@@ -1,13 +1,13 @@
 package model;
 
 
+import com.nur.model.Estado;
+import com.nur.model.Propiedad;
 import core.BusinessRuleValidationException;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import value.objects.PrecioValue;
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -35,7 +35,7 @@ class PropiedadTest {
         String nombre = "New Property";
         PrecioValue precio = new PrecioValue(1000.0);
 
-        propiedad.modificarPropiedad(propiedadId, nombre, precio);
+        propiedad.modificarPropiedad(propiedadId, nombre, 100.0);
 
         assertEquals(propiedadId, propiedad.getId());
         assertEquals(nombre, propiedad.getNombre());

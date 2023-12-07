@@ -14,6 +14,11 @@ public abstract class Entity {
     domainEvents = new ArrayList<>();
   }
 
+  //revisar conceptos
+  protected void setId(UUID id) {
+    this.id = id;
+  }
+
   public void addDomainEvent(DomainEvent event) {
     domainEvents.add(event);
   }

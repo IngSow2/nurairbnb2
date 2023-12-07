@@ -3,11 +3,11 @@ package infraestructure.repositories.MetodoPago;
 import core.BusinessRuleValidationException;
 import infraestructure.model.MetodoPagoJpaModel;
 import infraestructure.utils.MetodoPagoUtils;
-import model.MetodoPago;
+import com.nur.model.MetodoPago;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
-import repositories.MetodoPagoRepository;
+import com.nur.repositories.MetodoPagoRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;

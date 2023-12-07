@@ -1,13 +1,13 @@
 package infraestructure.utils;
 
-import annotations.Generated;
+import com.nur.annotations.Generated;
 import core.BusinessRuleValidationException;
 import infraestructure.model.TransactionJpaModel;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import model.Transaccion;
+import com.nur.model.Transaccion;
 
 @Generated
 public class TransaccionUtils {

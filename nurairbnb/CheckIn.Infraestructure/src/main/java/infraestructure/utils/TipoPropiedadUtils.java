@@ -2,7 +2,7 @@ package infraestructure.utils;
 
 import core.BusinessRuleValidationException;
 import infraestructure.model.TipoPropiedadJpaModel;
-import model.TipoPropiedad;
+import com.nur.model.TipoPropiedad;
 
 import java.util.Collections;
 import java.util.List;

@@ -1,10 +1,8 @@
 package utils;
 
 import core.BusinessRuleValidationException;
-import dtos.PropiedadDto;
 import dtos.TransactionDto;
-import model.Propiedad;
-import model.Transaccion;
+import com.nur.model.Transaccion;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

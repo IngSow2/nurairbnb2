@@ -1,6 +1,7 @@
 package model;
 
 
+import com.nur.model.CaracteristicasPropiedad;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;

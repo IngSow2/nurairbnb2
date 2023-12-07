@@ -2,15 +2,10 @@ package use.cases.command.tipropiedades.get;
 
 import an.awesome.pipelinr.Command;
 import core.BusinessRuleValidationException;
-import dtos.PropiedadDto;
 import dtos.TipoPropiedadDto;
-import model.Propiedad;
-import model.TipoPropiedad;
+import com.nur.model.TipoPropiedad;
 import org.springframework.stereotype.Component;
-import repositories.PropiedadRepository;
-import repositories.TipoPropiedadRepository;
-import use.cases.command.propiedades.get.GetPropiedadQuery;
-import utils.PropiedadMapper;
+import com.nur.repositories.TipoPropiedadRepository;
 import utils.TipoPropiedadMapper;
 
 import java.util.List;

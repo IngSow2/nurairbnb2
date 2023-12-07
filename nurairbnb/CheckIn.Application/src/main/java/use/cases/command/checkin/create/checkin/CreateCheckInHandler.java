@@ -3,19 +3,19 @@ package use.cases.command.checkin.create.checkin;
 import an.awesome.pipelinr.Command;
 import core.BusinessRuleValidationException;
 import dtos.CheckInDto;
-import factories.check.in.CheckInFactory;
-import factories.check.in.CreateCheckIn;
-import factories.propiedad.PropiedadFactory;
+import com.nur.factories.check.in.CheckInFactory;
+import com.nur.factories.check.in.CreateCheckIn;
+import com.nur.factories.propiedad.PropiedadFactory;
 
 import java.util.List;
 import java.util.UUID;
-import model.CheckIn;
-import model.Persona;
-import model.Propiedad;
+import com.nur.model.CheckIn;
+import com.nur.model.Persona;
+import com.nur.model.Propiedad;
 import org.springframework.stereotype.Component;
-import repositories.CheckInRepository;
-import repositories.PersonaRepository;
-import repositories.PropiedadRepository;
+import com.nur.repositories.CheckInRepository;
+import com.nur.repositories.PersonaRepository;
+import com.nur.repositories.PropiedadRepository;
 import utils.CheckInMapper;
 
 @Component

@@ -1,17 +1,12 @@
 package factories;
 
 import core.BusinessRuleValidationException;
-import factories.check.in.CreateCheckIn;
-import factories.propiedad.PropiedadFactory;
-import model.CheckIn;
-import model.Persona;
-import model.Propiedad;
+import com.nur.factories.propiedad.PropiedadFactory;
+import com.nur.model.Propiedad;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 class PropiedadFactoryTest {

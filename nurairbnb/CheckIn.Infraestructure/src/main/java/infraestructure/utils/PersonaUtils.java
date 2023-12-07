@@ -1,9 +1,9 @@
 package infraestructure.utils;
 
-import annotations.Generated;
+import com.nur.annotations.Generated;
 import core.BusinessRuleValidationException;
 import infraestructure.model.PersonaJpaModel;
-import model.Persona;
+import com.nur.model.Persona;
 
 @Generated
 public class PersonaUtils {

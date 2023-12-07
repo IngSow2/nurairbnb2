@@ -1,10 +1,9 @@
 package model;
 
+import com.nur.model.MetodoPago;
+import com.nur.model.MetodoTipo;
 import core.BusinessRuleValidationException;
-import core.Entity;
 import org.junit.jupiter.api.Test;
-
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

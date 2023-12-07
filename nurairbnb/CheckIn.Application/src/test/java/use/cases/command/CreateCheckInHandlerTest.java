@@ -2,16 +2,16 @@ package use.cases.command;
 
 import core.BusinessRuleValidationException;
 import dtos.CheckInDto;
-import model.CheckIn;
-import model.Persona;
-import model.Propiedad;
+import com.nur.model.CheckIn;
+import com.nur.model.Persona;
+import com.nur.model.Propiedad;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import repositories.CheckInRepository;
-import repositories.PersonaRepository;
-import repositories.PropiedadRepository;
+import com.nur.repositories.CheckInRepository;
+import com.nur.repositories.PersonaRepository;
+import com.nur.repositories.PropiedadRepository;
 import use.cases.command.checkin.create.checkin.CreateCheckInCommand;
 import use.cases.command.checkin.create.checkin.CreateCheckInHandler;
 

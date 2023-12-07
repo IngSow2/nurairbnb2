@@ -3,9 +3,9 @@ package use.cases.command.propiedades.list;
 import an.awesome.pipelinr.Command;
 import core.BusinessRuleValidationException;
 import dtos.PropiedadDto;
-import model.Propiedad;
+import com.nur.model.Propiedad;
 import org.springframework.stereotype.Component;
-import repositories.PropiedadRepository;
+import com.nur.repositories.PropiedadRepository;
 import utils.PropiedadMapper;
 
 import java.util.List;

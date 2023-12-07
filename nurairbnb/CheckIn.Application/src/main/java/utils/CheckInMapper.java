@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import model.CheckIn;
+import com.nur.model.CheckIn;
 
 public class CheckInMapper {
 
