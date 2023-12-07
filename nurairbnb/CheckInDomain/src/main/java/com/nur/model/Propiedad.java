@@ -34,7 +34,7 @@ public class Propiedad extends AggregateRoot {
     }
 
     public Propiedad(String id, String nombre, String estado, double precio) throws BusinessRuleValidationException {
-        this.id = UUID.fromString(id);
+        this.id =   UUID.fromString(id);
         this.nombre = nombre;
         if (estado.equals("HABILITADO")) this.estado = Estado.HABILITADO; else this.estado = Estado.INHABILITADO;
         this.precio = precio;

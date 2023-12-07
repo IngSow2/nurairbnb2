@@ -43,7 +43,7 @@ public class AssignPropiedadHandlerTest {
 
     AssignPropiedadCommand command = new AssignPropiedadCommand(dto);
     List<Propiedad> list = new ArrayList<>();
-    list.add(new Propiedad(UUID.randomUUID(), "Casa", "HABILITADA", 100.0));
+    list.add(new Propiedad(String.valueOf(UUID.randomUUID()), "Casa", "HABILITADA", 100.0));
     CheckIn mockCheckIn = new CheckIn(UUID.randomUUID(),UUID.randomUUID(), new Date(), new Propiedad(),list, new Persona("test", "test","123"));
     when(checkInRepository.findByPersonAndId(any(UUID.class), any(UUID.class))).thenReturn(mockCheckIn);
     when(checkInRepository.update(any(CheckIn.class))).thenReturn(UUID.randomUUID());

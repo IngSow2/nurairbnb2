@@ -94,7 +94,7 @@ public class CreateCheckInHandlerTest {
     }
 
     private CheckIn createSampleCheckIn() throws BusinessRuleValidationException {
-       return  new CheckIn(UUID.randomUUID(), Arrays.asList(new Propiedad(UUID.randomUUID(),"casa", "HABILITADA", 100.0)), new Persona("juan", "perez", "123"));
+       return  new CheckIn(UUID.randomUUID(), Arrays.asList(new Propiedad(UUID.randomUUID().toString(),"casa", "HABILITADA", 100.0)), new Persona("juan", "perez", "123"));
     }
 
     private Persona createSamplePersona() throws BusinessRuleValidationException {

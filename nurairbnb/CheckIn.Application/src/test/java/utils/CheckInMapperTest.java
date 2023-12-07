@@ -44,7 +44,7 @@ class CheckInMapperTest {
     }
 
     private CheckIn createSampleCheckIn() throws BusinessRuleValidationException {
-        CheckIn checkIn = new CheckIn(UUID.randomUUID(), Arrays.asList(new Propiedad(UUID.randomUUID(),"casa", "HABILITADA", 100.0)), new Persona("juan", "perez", "123"));
+        CheckIn checkIn = new CheckIn(UUID.randomUUID(), Arrays.asList(new Propiedad(UUID.randomUUID().toString(),"casa", "HABILITADA", 100.0)), new Persona("juan", "perez", "123"));
         return checkIn;
     }
 }

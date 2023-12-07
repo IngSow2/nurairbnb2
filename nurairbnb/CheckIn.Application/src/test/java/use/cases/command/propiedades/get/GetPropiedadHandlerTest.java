@@ -31,7 +31,7 @@ public class GetPropiedadHandlerTest {
   public void testHandle() throws BusinessRuleValidationException {
     UUID mockId = UUID.randomUUID();
     List<Propiedad> mockPropiedades = Arrays.asList(
-            new Propiedad(UUID.randomUUID(), "Casa", "HABILITADA", 100.0)
+            new Propiedad(UUID.randomUUID().toString(), "Casa", "HABILITADA", 100.0)
 
     );
     GetPropiedadQuery query = new GetPropiedadQuery(mockId.toString());
