@@ -1,7 +1,0 @@
-{
-  "id": "${id}",
-  "nombre": "${nombre}",
-  "estado": "${estado}",
-  "precio": "${precio}"
-}
-
