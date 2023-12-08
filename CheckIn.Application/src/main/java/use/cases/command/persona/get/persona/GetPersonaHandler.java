@@ -1,19 +1,17 @@
 package use.cases.command.persona.get.persona;
 
 import an.awesome.pipelinr.Command;
+import com.nur.model.Persona;
+import com.nur.repositories.PersonaRepository;
 import core.BusinessRuleValidationException;
 import dtos.PersonaDto;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import com.nur.model.Persona;
 import org.springframework.stereotype.Component;
-import com.nur.repositories.PersonaRepository;
 import utils.PersonaMapper;
 
 @Component
-public class GetPersonaHandler
-  implements Command.Handler<GetPersonaQuery, List<PersonaDto>> {
+public class GetPersonaHandler implements Command.Handler<GetPersonaQuery, List<PersonaDto>> {
 
   private final PersonaRepository passangerRepository;
 

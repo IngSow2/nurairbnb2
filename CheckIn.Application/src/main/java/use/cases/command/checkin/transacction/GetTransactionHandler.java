@@ -1,20 +1,19 @@
 package use.cases.command.checkin.transacction;
 
 import an.awesome.pipelinr.Command;
+import com.nur.model.Transaccion;
+import com.nur.repositories.TransactionRepository;
 import core.BusinessRuleValidationException;
 import dtos.TransactionDto;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
-import com.nur.model.Transaccion;
 import org.springframework.stereotype.Component;
-import com.nur.repositories.TransactionRepository;
 import utils.TransaccionMapper;
 
 @Component
 public class GetTransactionHandler
-  implements Command.Handler<GetTransactionQuery, List<TransactionDto>> {
+    implements Command.Handler<GetTransactionQuery, List<TransactionDto>> {
 
   private final TransactionRepository seatRepository;
 
@@ -25,9 +24,8 @@ public class GetTransactionHandler
   @Override
   public List<TransactionDto> handle(GetTransactionQuery command) {
     try {
-      List<Transaccion> seats = seatRepository.findByTransactionCode(
-        UUID.fromString(command.flightId)
-      );
+      List<Transaccion> seats =
+          seatRepository.findByTransactionCode(UUID.fromString(command.flightId));
       return seats.stream().map(TransaccionMapper::from).collect(Collectors.toList());
     } catch (BusinessRuleValidationException e) {
       e.printStackTrace();

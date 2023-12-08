@@ -1,20 +1,19 @@
 package use.cases.command.tipropiedades.get;
 
-import core.BusinessRuleValidationException;
-import dtos.TipoPropiedadDto;
-import com.nur.model.TipoPropiedad;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import com.nur.repositories.TipoPropiedadRepository;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
+import com.nur.model.TipoPropiedad;
+import com.nur.repositories.TipoPropiedadRepository;
+import core.BusinessRuleValidationException;
+import dtos.TipoPropiedadDto;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class GetTipoPropiedadHandlerTest {
 
@@ -30,10 +29,8 @@ public class GetTipoPropiedadHandlerTest {
   @Test
   public void testHandle() throws BusinessRuleValidationException {
     UUID mockId = UUID.randomUUID();
-    List<TipoPropiedad> mockPropiedades = Arrays.asList(
-            new TipoPropiedad()
+    List<TipoPropiedad> mockPropiedades = Arrays.asList(new TipoPropiedad());
 
-    );
     GetTipoPropiedadQuery query = new GetTipoPropiedadQuery(mockId.toString());
     when(tipoPropiedadRepository.findTipoPropiedadById(mockId)).thenReturn(mockPropiedades);
 

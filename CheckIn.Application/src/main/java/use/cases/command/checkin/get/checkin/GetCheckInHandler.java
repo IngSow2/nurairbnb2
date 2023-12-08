@@ -1,17 +1,16 @@
 package use.cases.command.checkin.get.checkin;
 
 import an.awesome.pipelinr.Command;
+import com.nur.model.CheckIn;
+import com.nur.repositories.CheckInRepository;
 import core.BusinessRuleValidationException;
 import dtos.CheckInDto;
 import java.util.UUID;
-import com.nur.model.CheckIn;
 import org.springframework.stereotype.Component;
-import com.nur.repositories.CheckInRepository;
 import utils.CheckInMapper;
 
 @Component
-public class GetCheckInHandler
-  implements Command.Handler<GetCheckInQuery, CheckInDto> {
+public class GetCheckInHandler implements Command.Handler<GetCheckInQuery, CheckInDto> {
 
   private final CheckInRepository checkInRepository;
 
@@ -24,10 +23,8 @@ public class GetCheckInHandler
     CheckIn checkIn = null;
     try {
       checkIn =
-        this.checkInRepository.findByPersonAndId(
-            UUID.fromString(query.passengerId),
-            UUID.fromString(query.flightId)
-          );
+          this.checkInRepository.findByPersonAndId(
+              UUID.fromString(query.passengerId), UUID.fromString(query.flightId));
     } catch (BusinessRuleValidationException e) {
       e.printStackTrace();
     }

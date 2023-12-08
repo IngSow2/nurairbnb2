@@ -1,12 +1,11 @@
 package dtos;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.util.Date;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import org.junit.jupiter.api.Test;
 
 public class CheckInDtoTest {
   @Test
@@ -18,7 +17,8 @@ public class CheckInDtoTest {
     List<PropiedadDto> availablePropiedades = List.of(new PropiedadDto(), new PropiedadDto());
     PersonaDto persona = new PersonaDto();
 
-    CheckInDto checkIn = new CheckInDto(checkInId, propiedadId, date, propiedad, availablePropiedades, persona);
+    CheckInDto checkIn =
+        new CheckInDto(checkInId, propiedadId, date, propiedad, availablePropiedades, persona);
 
     assertEquals(checkInId, checkIn.checkInId);
     assertEquals(propiedadId, checkIn.propiedadId);

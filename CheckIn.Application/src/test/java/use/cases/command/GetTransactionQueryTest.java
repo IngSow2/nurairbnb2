@@ -5,16 +5,13 @@ import org.junit.jupiter.api.Test;
 import use.cases.command.checkin.transacction.GetTransactionQuery;
 
 public class GetTransactionQueryTest {
-    @Test
-    public void testConstructor() {
+  @Test
+  public void testConstructor() {
 
+    String flightId = "ABC123";
 
-        String flightId = "ABC123";
+    GetTransactionQuery query = new GetTransactionQuery(flightId);
 
-
-        GetTransactionQuery query = new GetTransactionQuery(flightId);
-
-
-        Assertions.assertEquals(flightId, query.flightId);
-    }
+    Assertions.assertEquals(flightId, query.flightId);
+  }
 }

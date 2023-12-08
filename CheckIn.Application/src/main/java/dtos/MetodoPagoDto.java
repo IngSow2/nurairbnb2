@@ -18,12 +18,6 @@ public class MetodoPagoDto {
 
   @Override
   public String toString() {
-    return (
-      "{" +
-      "detalle:" +
-      detalle +
-      ", type:'" +
-      tipo + '}'
-    );
+    return ("{" + "detalle:" + detalle + ", type:'" + tipo + '}');
   }
 }

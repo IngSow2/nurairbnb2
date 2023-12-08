@@ -5,16 +5,14 @@ import org.junit.jupiter.api.Test;
 import use.cases.command.checkin.get.checkin.GetCheckInQuery;
 
 public class GetCheckInQueryTest {
-    @Test
-    public void testConstructor() {
-        String flightId = "ABC123";
-        String passengerId = "123456";
+  @Test
+  public void testConstructor() {
+    String flightId = "ABC123";
+    String passengerId = "123456";
 
+    GetCheckInQuery query = new GetCheckInQuery(flightId, passengerId);
 
-        GetCheckInQuery query = new GetCheckInQuery(flightId, passengerId);
-
-
-        Assertions.assertEquals(flightId, query.flightId);
-        Assertions.assertEquals(passengerId, query.passengerId);
-    }
+    Assertions.assertEquals(flightId, query.flightId);
+    Assertions.assertEquals(passengerId, query.passengerId);
+  }
 }
