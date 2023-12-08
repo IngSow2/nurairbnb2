@@ -33,7 +33,7 @@ subprojects {
                     TestLogEvent.SKIPPED
         }
     }
-   /* jacocoTestReport {
+   /*jacocoTestReport {
         dependsOn test
         reports {
             xml.enabled true
@@ -79,9 +79,12 @@ project('CheckInApi') {
 
 sonar {
 	properties {
+		property "sonar.gradle.skipCompile", "true"
 		property "sonar.projectKey", "WebDanny_microservice-propiedades"
 		property "sonar.organization", "webdanny"
 		property "sonar.host.url", "https://sonarcloud.io"
+
+
 	}
 }
 
@@ -92,6 +95,7 @@ spotless {
 		// Add other formatting rules if needed
 	}
 }
+
 
 
 
