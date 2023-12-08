@@ -87,6 +87,7 @@ public class CheckInApiApplication {
 
   @Bean(name = "metodoPagoRepository")
   public MetodoPagoRepository metodoPagoRepository() {
+
     return new MetodoPagoJpaRepository();
   }
 
