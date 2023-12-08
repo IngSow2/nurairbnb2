@@ -15,9 +15,7 @@ import use.cases.command.persona.get.persona.GetPersonaQuery;
 public class PersonaController {
 
   Logger logger = LoggerFactory.getLogger(PersonaController.class);
-  final Pipeline pipeline;
-
-  public PersonaController(Pipeline pipeline) {
+  final Pipeline pipeline;public PersonaController(Pipeline pipeline) {
     this.pipeline = pipeline;
   }
 
