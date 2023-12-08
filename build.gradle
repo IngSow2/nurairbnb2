@@ -37,6 +37,7 @@ subprojects {
         dependsOn test
         reports {
             xml.enabled true
+			html.enabled false
         }
 
     }*/
@@ -77,10 +78,11 @@ project('CheckInApi') {
     }
 }
 
+
 sonar {
 	properties {
 		property "sonar.gradle.skipCompile", "true"
-		property "sonar.projectKey", "WebDanny_microservice-propiedades"
+		property "sonar.projectKey", "WebDanny_nurairbnb"
 		property "sonar.organization", "webdanny"
 		property "sonar.host.url", "https://sonarcloud.io"
 
