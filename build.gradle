@@ -33,14 +33,7 @@ subprojects {
                     TestLogEvent.SKIPPED
         }
     }
-   /*jacocoTestReport {
-        dependsOn test
-        reports {
-            xml.enabled true
-			html.enabled false
-        }
 
-    }*/
 
 }
 project(':ShareKernel') {
@@ -79,7 +72,8 @@ project('CheckInApi') {
 }
 
 
-sonar {
+
+/*sonar {
 	properties {
 		property "sonar.gradle.skipCompile", "true"
 		property "sonar.projectKey", "WebDanny_nurairbnb"
@@ -88,8 +82,11 @@ sonar {
 
 
 	}
-}
-
+}*/
+/*tasks.sonar {
+	// Enable build cache for this specific task
+	outputs.upToDateWhen { false }
+}*/
 
 spotless {
 	java {
