@@ -10,8 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class CheckIn extends AggregateRoot {
-
-  private UUID propiedadId;
+	private UUID propiedadId;
   private Date date;
   private Propiedad propiedad;
   //private List<Baggage> baggages;
