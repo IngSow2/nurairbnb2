@@ -86,9 +86,7 @@ public class CheckInApiApplication {
   }
 
   @Bean(name = "metodoPagoRepository")
-  public MetodoPagoRepository metodoPagoRepository() {
-    return new MetodoPagoJpaRepository();
-  }
+  public MetodoPagoRepository metodoPagoRepository() {return new MetodoPagoJpaRepository();}
 
   @Bean(name = "propiedadRepository")
   public PropiedadRepository propiedadRepository() {
