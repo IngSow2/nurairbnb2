@@ -33,13 +33,13 @@ subprojects {
                     TestLogEvent.SKIPPED
         }
     }
-    jacocoTestReport {
+   /* jacocoTestReport {
         dependsOn test
         reports {
             xml.enabled true
         }
 
-    }
+    }*/
 
 }
 project(':ShareKernel') {
@@ -84,7 +84,17 @@ sonar {
 		property "sonar.host.url", "https://sonarcloud.io"
 	}
 }
+sonarqube {
+	properties {
+		property "sonar.gradle.skipCompile", "true"
+	}
+}
 
+sonar {
+	properties {
+		property "sonar.gradle.skipCompile", "true"
+	}
+}
 
 spotless {
 	java {
@@ -92,5 +102,7 @@ spotless {
 		// Add other formatting rules if needed
 	}
 }
+
+
 
 

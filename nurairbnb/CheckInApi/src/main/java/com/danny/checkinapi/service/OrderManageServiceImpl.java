@@ -1,67 +1,58 @@
 package com.danny.checkinapi.service;
 
-import com.nur.model.Propiedad;
 import com.nur.model.Reserve;
 import com.nur.model.StatusReserve;
 import com.nur.repositories.PropiedadRepository;
-import core.BusinessRuleValidationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-import use.cases.command.propiedades.get.GetPropiedadQuery;
-import utils.PropiedadMapper;
-
-import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Service
 public class OrderManageServiceImpl {
 
-    private static final String SOURCE = "propiedades";
-    private static final Logger LOG = LoggerFactory.getLogger(OrderManageServiceImpl.class);
-    //private PropiedadCrudRepository repository;
-    private KafkaTemplate<Long, Reserve> template;
-    private final PropiedadRepository propiedadRepository;
+  private static final String SOURCE = "propiedades";
+  private static final Logger LOG = LoggerFactory.getLogger(OrderManageServiceImpl.class);
+  // private PropiedadCrudRepository repository;
+  private KafkaTemplate<Long, Reserve> template;
+  private final PropiedadRepository propiedadRepository;
 
-    public OrderManageServiceImpl(KafkaTemplate<Long, Reserve> template, PropiedadRepository propiedadRepository) {
-        this.template = template;
-        this.propiedadRepository = propiedadRepository;
-    }
+  public OrderManageServiceImpl(
+      KafkaTemplate<Long, Reserve> template, PropiedadRepository propiedadRepository) {
+    this.template = template;
+    this.propiedadRepository = propiedadRepository;
+  }
 
-    public void reserve(Reserve order) {
+  public void reserve(Reserve order) {
 
-        propiedadRepository.update(order.getPropiedad());
-         //template.send("propiedades-reserve", 1L, order);
-        order.setStatus(StatusReserve.RECEIVED);
+    propiedadRepository.update(order.getPropiedad());
+    // template.send("propiedades-reserve", 1L, order);
+    order.setStatus(StatusReserve.RECEIVED);
 
+    System.out.println("RESERVA ACEPTADA O RECHAZADA");
+    LOG.info("Sent: {}", order);
+  }
 
+  public void confirm(Reserve order) {
 
-        System.out.println("RESERVA ACEPTADA O RECHAZADA");
-        LOG.info("Sent: {}", order);
-    }
+    System.out.println("RESERVA CONFIRMADA:  " + order.getStatus().name());
 
-    public void confirm(Reserve order) {
+    order.setStatus(StatusReserve.FINALIZED);
 
-        System.out.println("RESERVA CONFIRMADA:  " +order.getStatus().name() );
+    /*Customer customer = repository.findById(order.getCustomerId()).orElseThrow();
+    LOG.info("Found: {}", customer);
+    if (order.getStatus().equals("CONFIRMED")) {
+        customer.setAmountReserved(customer.getAmountReserved() - order.getPrice());
+        repository.save(customer);
+    } else if (order.getStatus().equals("ROLLBACK") && !order.getSource().equals(SOURCE)) {
+        customer.setAmountReserved(customer.getAmountReserved() - order.getPrice());
+        customer.setAmountAvailable(customer.getAmountAvailable() + order.getPrice());
+        repository.save(customer);
+    }*
 
-        order.setStatus(StatusReserve.FINALIZED);
+     */
 
-        /*Customer customer = repository.findById(order.getCustomerId()).orElseThrow();
-        LOG.info("Found: {}", customer);
-        if (order.getStatus().equals("CONFIRMED")) {
-            customer.setAmountReserved(customer.getAmountReserved() - order.getPrice());
-            repository.save(customer);
-        } else if (order.getStatus().equals("ROLLBACK") && !order.getSource().equals(SOURCE)) {
-            customer.setAmountReserved(customer.getAmountReserved() - order.getPrice());
-            customer.setAmountAvailable(customer.getAmountAvailable() + order.getPrice());
-            repository.save(customer);
-        }*
+    // System.out.println("CONFIRMADO LA RESERVA:  " + order.getStatus().name());
 
-         */
-
-        //System.out.println("CONFIRMADO LA RESERVA:  " + order.getStatus().name());
-
-    }
+  }
 }

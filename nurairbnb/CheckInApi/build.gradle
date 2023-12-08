@@ -3,6 +3,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id 'application'
+	id 'com.diffplug.spotless' version '5.0.0'
 }
 
 group 'com.danny.checkinapi'
@@ -34,3 +35,10 @@ test {
 }
 
 apply from: file("$rootProject.projectDir/gradle/heroku/stage.gradle")
+
+spotless {
+	java {
+		googleJavaFormat()
+		// Add other formatting rules if needed
+	}
+}

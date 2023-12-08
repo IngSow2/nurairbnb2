@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import use.cases.command.persona.get.persona.GetPersonaQuery;
 
@@ -17,11 +16,14 @@ public class PersonaController {
 
   Logger logger = LoggerFactory.getLogger(PersonaController.class);
   final Pipeline pipeline;
+
   public PersonaController(Pipeline pipeline) {
     this.pipeline = pipeline;
   }
+
   @GetMapping("/persona")
-  public List<PersonaDto> getPassengers() {GetPersonaQuery query = new GetPersonaQuery();
+  public List<PersonaDto> getPassengers() {
+    GetPersonaQuery query = new GetPersonaQuery();
     return query.execute(pipeline);
   }
 }

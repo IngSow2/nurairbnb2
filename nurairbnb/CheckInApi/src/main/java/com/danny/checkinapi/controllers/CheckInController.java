@@ -2,8 +2,6 @@ package com.danny.checkinapi.controllers;
 
 import an.awesome.pipelinr.Pipeline;
 import dtos.*;
-
-import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -28,20 +26,14 @@ public class CheckInController {
     return assignSeatCommand.execute(pipeline);
   }
 
-
   @PostMapping("/create-checkin")
   public CheckInDto createCheckIn(@RequestBody CheckInDto checkInDto) {
-    CreateCheckInCommand createCheckInCommand = new CreateCheckInCommand(
-      checkInDto
-    );
+    CreateCheckInCommand createCheckInCommand = new CreateCheckInCommand(checkInDto);
     return createCheckInCommand.execute(pipeline);
   }
 
   @GetMapping("/checkIn/{checkInId}/{personaId}")
-  public CheckInDto getCheckIn(
-    @PathVariable String checkInId,
-    @PathVariable String passengerId
-  ) {
+  public CheckInDto getCheckIn(@PathVariable String checkInId, @PathVariable String passengerId) {
     GetCheckInQuery query = new GetCheckInQuery(checkInId, passengerId);
     return query.execute(pipeline);
   }

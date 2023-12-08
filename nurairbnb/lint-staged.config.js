@@ -1,4 +1,5 @@
-
 module.exports = {
-  '**/*.java': ['./gradlew spotlessApply', 'git add'],
+  '**/*.java': (filenames) => {
+    return [`./gradlew :CheckInApi:spotlessApply -Pfiles=${filenames.join(',')}`];
+  },
 };
