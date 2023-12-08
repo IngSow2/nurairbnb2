@@ -84,7 +84,7 @@ sonar {
 		property "sonar.host.url", "https://sonarcloud.io"
 	}
 }
-sonarqube {
+/*sonarqube {
 	properties {
 		property "sonar.gradle.skipCompile", "true"
 	}
@@ -94,7 +94,7 @@ sonar {
 	properties {
 		property "sonar.gradle.skipCompile", "true"
 	}
-}
+}*/
 
 spotless {
 	java {
