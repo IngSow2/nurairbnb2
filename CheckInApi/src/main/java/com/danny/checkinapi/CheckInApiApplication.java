@@ -71,7 +71,6 @@ public class CheckInApiApplication {
 
   @Bean(name = "checkInRepository")
   public CheckInRepository checkInRepository() {
-
     return new CheckInJpaRepository();
   }
 
@@ -82,6 +81,7 @@ public class CheckInApiApplication {
 
   @Bean(name = "seatRepository")
   public TransactionRepository seatRepository() {
+
     return new TransactionJpaRepository();
   }
 
