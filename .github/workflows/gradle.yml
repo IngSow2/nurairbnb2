@@ -30,4 +30,4 @@ jobs:
 
 
       - name: Stop the server
-        run: ssh staging 'cd /home/nurairbnb'
+        run: ssh staging 'cd /home/nurairbnb && sh deploy.sh'
