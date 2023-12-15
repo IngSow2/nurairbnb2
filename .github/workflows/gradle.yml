@@ -23,7 +23,7 @@ jobs:
           cat >>~/.ssh/config <<END
             Host staging
               HostName 137.184.4.141
-              User $SSH_USER
+              User root
               IdentityFile ~/.ssh/staging.key
               StrictHostKeyChecking no
           END
