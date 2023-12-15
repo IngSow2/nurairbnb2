@@ -22,7 +22,7 @@ jobs:
           chmod 600 ~/.ssh/staging.key
           cat >>~/.ssh/config <<END
             Host staging
-              HostName 137.184.4.141
+              HostName 137.184.40.135
               User root
               IdentityFile ~/.ssh/staging.key
               StrictHostKeyChecking no
