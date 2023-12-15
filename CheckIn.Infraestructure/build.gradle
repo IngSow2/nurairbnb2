@@ -2,7 +2,8 @@ plugins {
     id 'org.springframework.boot' version '3.1.5'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java-library'
-//    id 'application'
+	id 'com.diffplug.spotless' version '5.0.0'
+    id 'jacoco'
 }
 
 group 'com.danny'
@@ -28,3 +29,11 @@ test {
     useJUnitPlatform()
 }
 //apply from: file("$rootProject.projectDir/gradle/heroku/stage.gradle")
+
+spotless {
+	java {
+		googleJavaFormat()
+		// Add other formatting rules if needed
+	}
+}
+

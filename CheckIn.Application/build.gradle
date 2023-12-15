@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
 	id 'com.diffplug.spotless' version '5.0.0'
+	id 'jacoco'
 }
 
 group 'com.danny'
@@ -33,3 +34,4 @@ spotless {
 		// Add other formatting rules if needed
 	}
 }
+

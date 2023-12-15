@@ -2,12 +2,26 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 
 plugins {
-    id 'java'
+	id 'java'
 	id "org.sonarqube" version "4.4.1.3373"
-    id("com.github.johnrengelman.shadow") version "7.0.0"
-    id 'idea'
+	id("com.github.johnrengelman.shadow") version "7.0.0"
+	id 'idea'
 	id 'com.diffplug.spotless' version '5.0.0'
+	id 'jacoco'
+
 }
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Otras dependencias de tu proyecto
+
+	// Jacoco
+	implementation 'org.jacoco:org.jacoco.core:0.8.7'
+}
+
 
 group 'com.danny'
 version '1.0-SNAPSHOT'
@@ -16,61 +30,64 @@ targetCompatibility = JavaVersion.VERSION_17
 apply from: file('gradle/heroku/clean.gradle')
 
 subprojects {
-    apply plugin: 'com.github.johnrengelman.shadow'
-    apply plugin: 'java'
-    apply plugin: 'jacoco'
+	apply plugin: 'com.github.johnrengelman.shadow'
+	apply plugin: 'java'
+	apply plugin: 'jacoco'
 
 
-    repositories {
-        mavenCentral()
-    }
+	repositories {
+		mavenCentral()
+	}
 
-    test {
-        finalizedBy jacocoTestReport
-        testLogging {
-            events TestLogEvent.FAILED,
-                    TestLogEvent.PASSED,
-                    TestLogEvent.SKIPPED
-        }
-    }
-
+	test {
+		finalizedBy jacocoTestReport
+		testLogging {
+			events TestLogEvent.FAILED,
+					TestLogEvent.PASSED,
+					TestLogEvent.SKIPPED
+		}
+	}
+	jacocoTestReport {
+		reports {
+			xml.enabled(true)
+		}
+	}
 
 }
 project(':ShareKernel') {
-    dependencies {}
+	dependencies {}
 }
 
 project(':CheckInDomain') {
-    dependencies {
-        implementation project(':ShareKernel')
-    }
+	dependencies {
+		implementation project(':ShareKernel')
+	}
 }
 
 project(':CheckIn.Application') {
-    dependencies {
-        implementation project(':ShareKernel'), project(':CheckInDomain')
-        testImplementation project(':CheckInDomain').sourceSets.test.output
-    }
+	dependencies {
+		implementation project(':ShareKernel'), project(':CheckInDomain')
+		testImplementation project(':CheckInDomain').sourceSets.test.output
+	}
 }
 
 project('CheckIn.Infraestructure') {
-    dependencies {
-        implementation project(':ShareKernel'), project(':CheckInDomain'), project(':CheckIn.Application')
-        testImplementation project(':CheckInDomain').sourceSets.test.output, project(':CheckIn.Application').sourceSets.test.output
-    }
+	dependencies {
+		implementation project(':ShareKernel'), project(':CheckInDomain'), project(':CheckIn.Application')
+		testImplementation project(':CheckInDomain').sourceSets.test.output, project(':CheckIn.Application').sourceSets.test.output
+	}
 }
 
 project('CheckInApi') {
-    dependencies {
-        implementation project(':ShareKernel'),
-                project(':CheckInDomain'),
-                project(':CheckIn.Infraestructure'),
-                project(':CheckIn.Application')
-        testImplementation project(':CheckInDomain').sourceSets.test.output,
-                project(':CheckIn.Application').sourceSets.test.output
-    }
+	dependencies {
+		implementation project(':ShareKernel'),
+				project(':CheckInDomain'),
+				project(':CheckIn.Infraestructure'),
+				project(':CheckIn.Application')
+		testImplementation project(':CheckInDomain').sourceSets.test.output,
+				project(':CheckIn.Application').sourceSets.test.output
+	}
 }
-
 
 
 sonar {
@@ -83,10 +100,6 @@ sonar {
 
 	}
 }
-/*tasks.sonar {
-	// Enable build cache for this specific task
-	outputs.upToDateWhen { false }
-}*/
 
 spotless {
 	java {
