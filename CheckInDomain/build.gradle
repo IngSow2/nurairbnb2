@@ -22,3 +22,11 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+
+spotless {
+	java {
+		googleJavaFormat()
+		// Add other formatting rules if needed
+	}
+}
