@@ -1,74 +1,71 @@
 package com.nur.model;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.nur.valueObjects.DateValueObject;
 import core.BusinessRuleValidationException;
 import core.Entity;
-import com.nur.valueObjects.DateValueObject;
-
 import java.util.Date;
 import java.util.UUID;
 
 public class Reserve extends Entity {
-    @JsonProperty("dateIn")
-    public Date dateIn;
-    @JsonProperty("dateOut")
-    public Date dateOut;
-    @JsonProperty("status")
-    public StatusReserve status;
-    @JsonProperty("details")
-    public String details;
+  @JsonProperty("dateIn")
+  public Date dateIn;
 
-    @JsonProperty("propiedad")
-    public Propiedad propiedad;
+  @JsonProperty("dateOut")
+  public Date dateOut;
 
+  @JsonProperty("status")
+  public StatusReserve status;
 
-    public Propiedad getPropiedad() {
-        return propiedad;
-    }
+  @JsonProperty("details")
+  public String details;
 
-    public void setStatus(StatusReserve status) {
-        this.status = status;
-    }
+  @JsonProperty("propiedad")
+  public Propiedad propiedad;
 
-    public Date getDateIn() {
-        return dateIn;
-    }
+  public Propiedad getPropiedad() {
+    return propiedad;
+  }
 
-    public Date getDateOut() {
-        return dateOut;
-    }
+  public void setStatus(StatusReserve status) {
+    this.status = status;
+  }
 
-    public String getDetails() {
-        return details;
-    }
+  public Date getDateIn() {
+    return dateIn;
+  }
 
-    public StatusReserve getStatus() {
-        return status;
-    }
+  public Date getDateOut() {
+    return dateOut;
+  }
 
+  public String getDetails() {
+    return details;
+  }
 
-    public Reserve(Date dateIn, Date dateOut, String details, Propiedad propiedad) throws BusinessRuleValidationException {
-        new DateValueObject(dateIn,dateOut);
-        id = UUID.randomUUID();
-        this.dateIn = dateIn;
-        this.status = StatusReserve.RESERVE;
-        this.dateOut = dateOut;
-        this.details = details;
-        this.propiedad = propiedad;
-    }
+  public StatusReserve getStatus() {
+    return status;
+  }
 
-    public Reserve(UUID id, Date dateIn, Date dateOut, String details, Propiedad propiedad)  {
-        setId(id);
-        this.dateIn = dateIn;
-        this.status = StatusReserve.RESERVE;
-        this.dateOut = dateOut;
-        this.details = details;
-        this.propiedad = propiedad;
-    }
+  public Reserve(Date dateIn, Date dateOut, String details, Propiedad propiedad)
+      throws BusinessRuleValidationException {
+    new DateValueObject(dateIn, dateOut);
+    id = UUID.randomUUID();
+    this.dateIn = dateIn;
+    this.status = StatusReserve.RESERVE;
+    this.dateOut = dateOut;
+    this.details = details;
+    this.propiedad = propiedad;
+  }
 
+  public Reserve(UUID id, Date dateIn, Date dateOut, String details, Propiedad propiedad) {
+    setId(id);
+    this.dateIn = dateIn;
+    this.status = StatusReserve.RESERVE;
+    this.dateOut = dateOut;
+    this.details = details;
+    this.propiedad = propiedad;
+  }
 
-
-    public Reserve() {
-    }
+  public Reserve() {}
 }

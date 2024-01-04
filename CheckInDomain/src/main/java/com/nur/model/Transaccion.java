@@ -1,6 +1,5 @@
 package com.nur.model;
 
-import core.BusinessRuleValidationException;
 import core.Entity;
 import java.util.UUID;
 
@@ -9,7 +8,6 @@ public class Transaccion extends Entity {
   private UUID code;
   private String descripcion;
   private Double monto;
-
 
   public Transaccion(UUID code, String descripcion, Double monto) {
     this.code = code;

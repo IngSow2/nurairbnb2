@@ -1,5 +1,3 @@
 package event;
 
-public class PropiedadAssignedTest {
-
-}
+public class PropiedadAssignedTest {}

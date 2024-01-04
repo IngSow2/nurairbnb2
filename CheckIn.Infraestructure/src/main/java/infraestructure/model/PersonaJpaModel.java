@@ -1,8 +1,7 @@
 package infraestructure.model;
 
-import java.util.UUID;
 import jakarta.persistence.*;
-
+import java.util.UUID;
 
 @Entity
 @Table(name = "passangers")
@@ -20,8 +19,6 @@ public class PersonaJpaModel {
 
   @Column(nullable = false)
   private String ci;
-
-
 
   public UUID getId() {
     return id;
@@ -54,6 +51,4 @@ public class PersonaJpaModel {
   public void setCi(String ci) {
     this.ci = ci;
   }
-
-
 }

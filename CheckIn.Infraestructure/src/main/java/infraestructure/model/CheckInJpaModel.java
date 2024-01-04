@@ -12,7 +12,7 @@ public class CheckInJpaModel {
   @Column(nullable = false)
   private UUID id;
 
-  @Column(name="prop_id",nullable = false)
+  @Column(name = "prop_id", nullable = false)
   private UUID propiedadId;
 
   @Column(nullable = false)
@@ -29,10 +29,7 @@ public class CheckInJpaModel {
     this.propiedad = propiedad;
   }
 
-  @OneToOne
-  private PersonaJpaModel persona;
-
-
+  @OneToOne private PersonaJpaModel persona;
 
   public CheckInJpaModel() {}
 
@@ -52,7 +49,6 @@ public class CheckInJpaModel {
     this.date = date;
   }
 
-
   public UUID getPropiedadId() {
     return propiedadId;
   }
@@ -68,6 +64,4 @@ public class CheckInJpaModel {
   public void setPersona(PersonaJpaModel persona) {
     this.persona = persona;
   }
-
-
 }

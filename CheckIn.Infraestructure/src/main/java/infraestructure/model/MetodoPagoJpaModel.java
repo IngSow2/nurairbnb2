@@ -1,7 +1,7 @@
 package infraestructure.model;
 
-import java.util.UUID;
 import jakarta.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(name = "metodopago")
@@ -17,7 +17,6 @@ public class MetodoPagoJpaModel {
   @Column(nullable = false)
   private String tipo;
 
-
   public UUID getId() {
     return id;
   }
@@ -25,7 +24,6 @@ public class MetodoPagoJpaModel {
   public void setId(UUID id) {
     this.id = id;
   }
-
 
   public String getTipo() {
     return tipo;

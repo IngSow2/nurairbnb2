@@ -6,19 +6,15 @@ import com.nur.model.Propiedad;
 import core.BusinessRuleValidationException;
 import infraestructure.model.CheckInJpaModel;
 import infraestructure.model.PropiedadJpaModel;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 @Generated
 public class CheckInUtils {
 
   public static CheckIn jpaModelToCheckIn(
-    CheckInJpaModel jpaModel,
-    List<PropiedadJpaModel> propiedades
-  ) throws BusinessRuleValidationException {
+      CheckInJpaModel jpaModel, List<PropiedadJpaModel> propiedades)
+      throws BusinessRuleValidationException {
     if (jpaModel == null) return null;
     List<Propiedad> seatsAvailable = new ArrayList<>();
     for (PropiedadJpaModel seatJpaModel : propiedades) {
@@ -35,13 +31,11 @@ public class CheckInUtils {
     }**/
 
     return new CheckIn(
-      jpaModel.getId(),
-      jpaModel.getPropiedadId(),
-      jpaModel.getDate(),
-      PropiedadUtils.jpaModelToPropiedad(jpaModel.getPropiedad()),
-      seatsAvailable,
-      PersonaUtils.jpaModelToPassanger(jpaModel.getPersona())
-    );
-
+        jpaModel.getId(),
+        jpaModel.getPropiedadId(),
+        jpaModel.getDate(),
+        PropiedadUtils.jpaModelToPropiedad(jpaModel.getPropiedad()),
+        seatsAvailable,
+        PersonaUtils.jpaModelToPassanger(jpaModel.getPersona()));
   }
 }

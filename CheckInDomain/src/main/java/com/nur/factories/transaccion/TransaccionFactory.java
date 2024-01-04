@@ -5,5 +5,5 @@ import core.BusinessRuleValidationException;
 
 public interface TransaccionFactory {
   Transaccion create(String code, String descripcion, double monto)
-    throws BusinessRuleValidationException;
+      throws BusinessRuleValidationException;
 }

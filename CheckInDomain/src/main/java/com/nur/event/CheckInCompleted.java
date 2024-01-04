@@ -1,7 +1,7 @@
 package com.nur.event;
 
-import core.DomainEvent;
 import com.nur.model.CheckIn;
+import core.DomainEvent;
 
 public class CheckInCompleted extends DomainEvent {
 

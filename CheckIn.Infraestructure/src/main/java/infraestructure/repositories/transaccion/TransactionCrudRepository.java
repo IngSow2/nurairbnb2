@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TransactionCrudRepository extends CrudRepository<TransactionJpaModel, UUID> {
-  //List<TransaccionJpaModel> findByFlightIdAndStatus(UUID flight, String status);
+  // List<TransaccionJpaModel> findByFlightIdAndStatus(UUID flight, String status);
 
   List<TransactionJpaModel> findByCode(UUID id);
 }

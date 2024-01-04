@@ -1,9 +1,9 @@
 package infraestructure.utils;
 
 import com.nur.annotations.Generated;
+import com.nur.model.Persona;
 import core.BusinessRuleValidationException;
 import infraestructure.model.PersonaJpaModel;
-import com.nur.model.Persona;
 
 @Generated
 public class PersonaUtils {
@@ -18,11 +18,7 @@ public class PersonaUtils {
   }
 
   public static Persona jpaModelToPassanger(PersonaJpaModel jpaModel)
-    throws BusinessRuleValidationException {
-    return new Persona(
-      jpaModel.getName(),
-      jpaModel.getLastname(),
-      jpaModel.getCi()
-    );
+      throws BusinessRuleValidationException {
+    return new Persona(jpaModel.getName(), jpaModel.getLastname(), jpaModel.getCi());
   }
 }

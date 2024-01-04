@@ -1,4 +1,3 @@
 package event;
 
-public class PropiedadEliminadoTest {
-}
+public class PropiedadEliminadoTest {}

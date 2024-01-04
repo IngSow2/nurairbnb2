@@ -1,5 +1,7 @@
 package infraestructure.repositories.transaccion;
 
+import com.nur.model.Transaccion;
+import com.nur.repositories.TransactionRepository;
 import core.BusinessRuleValidationException;
 import infraestructure.model.TransactionJpaModel;
 import infraestructure.utils.TransaccionUtils;
@@ -7,16 +9,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
-import com.nur.model.Transaccion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.nur.repositories.TransactionRepository;
 
 @Repository
 public class TransactionJpaRepository implements TransactionRepository {
 
-  @Autowired
-  private TransactionCrudRepository seatCrudRepository;
+  @Autowired private TransactionCrudRepository seatCrudRepository;
 
   @Override
   public UUID update(Transaccion seat) {
@@ -43,11 +42,9 @@ public class TransactionJpaRepository implements TransactionRepository {
 
   @Override
   public List<Transaccion> findByTransactionCode(UUID flightId)
-    throws BusinessRuleValidationException {
+      throws BusinessRuleValidationException {
     List<TransactionJpaModel> jpaModels = seatCrudRepository.findByCode(flightId);
-    if (
-      jpaModels == null || jpaModels.isEmpty()
-    ) return Collections.emptyList();
+    if (jpaModels == null || jpaModels.isEmpty()) return Collections.emptyList();
     List<Transaccion> seats = new ArrayList<>();
     for (TransactionJpaModel jpaModel : jpaModels) {
       seats.add(TransaccionUtils.jpaModelToSeat(jpaModel));

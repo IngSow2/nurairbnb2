@@ -8,6 +8,5 @@ import java.util.UUID;
 public interface MetodoPagoRepository {
   UUID update(MetodoPago baggage);
 
-  List<MetodoPago> findMetodoPagoById(UUID metodoId)
-    throws BusinessRuleValidationException;
+  List<MetodoPago> findMetodoPagoById(UUID metodoId) throws BusinessRuleValidationException;
 }
