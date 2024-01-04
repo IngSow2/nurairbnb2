@@ -3,11 +3,12 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
 	id 'java'
+	id 'jacoco'
 	id "org.sonarqube" version "4.4.1.3373"
 	id("com.github.johnrengelman.shadow") version "7.0.0"
 	id 'idea'
 	id 'com.diffplug.spotless' version '5.0.0'
-	id 'jacoco'
+
 
 }
 
@@ -16,10 +17,7 @@ repositories {
 }
 
 dependencies {
-	// Otras dependencias de tu proyecto
-
-	// Jacoco
-	implementation 'org.jacoco:org.jacoco.core:0.8.7'
+	implementation 'org.jacoco:org.jacoco.core:0.8.11'
 }
 
 
@@ -48,9 +46,14 @@ subprojects {
 		}
 	}
 	jacocoTestReport {
+		//dependsOn 'test'
 		reports {
-			xml.enabled(true)
+			xml.required = true
+			html.required = true
+			html.destination file("build/reports/jacoco")
 		}
+		//reportsDir = file("$buildDir/jacoco-report")
+
 	}
 
 }
@@ -107,6 +110,8 @@ spotless {
 		// Add other formatting rules if needed
 	}
 }
+
+
 
 
 
