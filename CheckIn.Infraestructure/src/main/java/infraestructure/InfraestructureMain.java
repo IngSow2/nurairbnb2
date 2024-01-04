@@ -12,9 +12,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({ "infraestructure.model", "infraestructure.repositories" })
+@ComponentScan({"infraestructure.model", "infraestructure.repositories"})
 @EntityScan("infraestructure.model")
-@EnableJpaRepositories(basePackages = { "infraestructure.repositories" })
+@EnableJpaRepositories(basePackages = {"infraestructure.repositories"})
 @Generated
 public class InfraestructureMain {
 
