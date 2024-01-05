@@ -10,7 +10,7 @@ RUN mkdir /logs
 
 
 ARG APP_USER=nurairbnbuser
-ARG JAR_FILE=CheckInApi-1.0.jar
+ARG JAR_FILE=../CheckInApi-1.0.jar
 
 
 ADD $JAR_FILE /app.jar
