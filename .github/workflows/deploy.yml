@@ -2,8 +2,10 @@ name: Staging to digitalocean
 
 on:
   push:
-    tags:
+    branches:
       - main
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   build:
@@ -34,7 +36,7 @@ jobs:
         uses:  actions/setup-java@v3
 
       - name: Get tag name
-        uses: nahomy/get-tag@v2.1
+        uses: olegtarasov/get-tag@v2.1
 
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
