@@ -1,36 +1,28 @@
-version: '1.0'
+version: "3.8"
 services:
-  propiedades:
-    image: nahomy/propiedades:tag
+  java_app:
+    container_name: java_app
+    image: nahomy/propiedades:v4
+    build: .
     ports:
-      - 8085:8080
-    depends_on:
-      - postgres
-    healthcheck:
-      interval: 10s
-      timeout: 10s
-      retries: 45
+      - 8083:8083
     environment:
-      - DATA_BASE_URL=jdbc:postgresql://postgres:5433/nurairbnbc
+      - DATA_BASE_URL=jdbc:postgresql://java_db:5432/nurairbnbc
       - DATA_BASE_USERNAME=postgres
-      - DATA_BASE_PASSWORD=postgres
-      - PORT=8085
-  postgres:
-    container_name: postgres
-    image: postgres:16-alpine
+      - DATA_BASE_PASSWORD=Estudiar1995
+      - PORT=8083
+    depends_on:
+      - java_db
+  java_db:
+    container_name: java_db
+    image: postgres:14
     ports:
-      - 5433:5432
-    volumes:
-      - ~/apps/postgres:/var/lib/postgresql/data
+      - 5432:5432
     environment:
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=nurairbnbc
-    healthcheck:
-      interval: 10s
-      timeout: 10s
-      retries: 45
-  
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Estudiar1995
+      POSTGRES_DB: nurairbnbc
+
 networks:
-  default:
-     driver: bridge
+  nurbnbcristhian:
+    driver: bridge
