@@ -4,29 +4,15 @@ server:
 
 spring:
   datasource:
-    url: ${DATA_BASE_URL:jdbc:postgresql://127.0.0.1:5433/nurairbnbc}
-    username: ${DATA_BASE_USERNAME:postgres}
-    password: ${DATA_BASE_PASSWORD:Estudiar1995}
+    url: ${DATA_BASE_URL:jdbc:postgresql://db-postgresql-nyc3-79796-do-user-15512334-0.c.db.ondigitalocean.com:25060/nurairbnbc?sslmode=require}
+    username: ${DATA_BASE_USERNAME:doadmin}
+    password: ${DATA_BASE_PASSWORD:AVNS_0wmhCcsag4WsAFG6qB0}
 
   jpa:
     generate-ddl: true
     hibernate:
       ddl-auto: update
 
-spring.kafka:
-  bootstrap-servers: 127.0.0.1:19092
-  consumer:
-    key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
-    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-    properties:
-      spring.json.trusted.packages: "*"
-  producer:
-    key-serializer: org.apache.kafka.common.serialization.LongSerializer
-    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
-spring.output.ansi.enabled: ALWAYS
-
-logging.pattern.console: "%clr(%d{HH:mm:ss.SSS}){blue} %clr(---){faint} %clr([%15.15t]){yellow} %clr(:){red} %clr(%m){faint}%n"
 
 springdoc:
   swagger-ui:

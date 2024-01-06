@@ -6,7 +6,6 @@ import an.awesome.pipelinr.Pipeline;
 import an.awesome.pipelinr.Pipelinr;
 import com.danny.checkinapi.service.OrderManageServiceImpl;
 import com.nur.annotations.Generated;
-import com.nur.model.Reserve;
 import com.nur.repositories.*;
 import infraestructure.repositories.MetodoPago.MetodoPagoJpaRepository;
 import infraestructure.repositories.check.in.CheckInJpaRepository;
@@ -30,7 +29,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.kafka.annotation.EnableKafka;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication(
@@ -58,16 +56,6 @@ public class CheckInApiApplication {
   }
 
   @Autowired OrderManageServiceImpl orderManageService;
-
-  @KafkaListener(id = "reserve", topics = "reserve", groupId = "propiedades")
-  public void onEvent(Reserve o) {
-    LOG.info("Received: {}", o);
-    System.out.println("ESTADO: ---  " + o.getStatus());
-    //  GetPropiedadQuery  query = new GetPropiedadQuery(o.getPropiedad().getId().toString());
-    if (o.getStatus().name().equals("RESERVE")) orderManageService.reserve(o);
-    else System.out.println("no esta reservado ");
-    orderManageService.confirm(o);
-  }
 
   @Bean(name = "checkInRepository")
   public CheckInRepository checkInRepository() {
