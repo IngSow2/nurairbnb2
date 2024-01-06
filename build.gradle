@@ -99,6 +99,7 @@ sonar {
 		property "sonar.projectKey", "WebDanny_nurairbnb"
 		property "sonar.organization", "webdanny"
 		property "sonar.host.url", "https://sonarcloud.io"
+		property "sonar.token", "72751a83a35bb8b6e2816388ee284d67bc7e0e2a"
 
 
 	}
