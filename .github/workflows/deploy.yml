@@ -24,11 +24,15 @@ jobs:
           distribution: 'zulu'
       - name: Copy Docker file
         run: cp ${{ github.workspace }}/docker-deploy/Dockerfile ${{ github.workspace }}/Dockerfile
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v2
+      - name: login
+        uses: docker/login-action@v1
         with:
           username: dannyhs
           password: AL@banza06**
-          repository: dannyhs/propiedades
-          tag_with_ref: true
-          tag_with_sha: true
+          registry: registry.docker.io
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          tags: registry.docker.io/dannyhs/propiedades:v1
+          push: true
