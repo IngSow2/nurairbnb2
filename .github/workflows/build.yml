@@ -35,6 +35,6 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle
       - name: Build and analyze
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: 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  # Needed to get PR information, if any
           SONAR_TOKEN: 72751a83a35bb8b6e2816388ee284d67bc7e0e2a
         run: ./gradlew build sonar --info
