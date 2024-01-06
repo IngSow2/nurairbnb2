@@ -13,7 +13,7 @@ ARG APP_USER=nurairbnbuser
 ARG JAR_FILE=checkin.jar
 
 
-ADD $JAR_FILE /app.jar
+COPY $JAR_FILE /app.jar
 RUN adduser -D $APP_USER && \
     chown $APP_USER /app.jar /logs
 USER $APP_USER
