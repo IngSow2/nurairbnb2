@@ -10,10 +10,10 @@ RUN mkdir /logs
 
 
 ARG APP_USER=nurairbnbuser
-ARG JAR_FILE=CheckInApi-1.0.jar
+ARG JAR_FILE=docker-deploy/checkin.jar
 
 
-ADD $JAR_FILE /app.jar
+COPY $JAR_FILE /app.jar
 RUN adduser -D $APP_USER && \
     chown $APP_USER /app.jar /logs
 USER $APP_USER
